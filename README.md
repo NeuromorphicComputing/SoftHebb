@@ -418,3 +418,27 @@ The selection of the grid search is done by the argument --config.  However the 
 - number 3
   - 3.a (activation function = Repu/Triangle): `python ray_search.py --preset 2SoftHebbCnnCIFAR --dataset-unsup CIFAR10_1 --dataset-sup CIFAR10_50 --config 3a --folder-name layerx_search3a`
   - 3.b (activation function = softmax): `python ray_search.py --preset 2SoftHebbCnnCIFAR --dataset-unsup CIFAR10_1 --dataset-sup CIFAR10_50 --config 3b --folder-name layerx_search3b`
+
+
+## Cite
+To cite this work please use the following citations:
+
+    @inproceedings{
+      journe2023hebbian,
+      title={Hebbian Deep Learning Without Feedback},
+      author={Adrien Journ{\'e} and Hector Garcia Rodriguez and Qinghai Guo and Timoleon Moraitis},
+      booktitle={The Eleventh International Conference on Learning Representations },
+      year={2023},
+      url={https://openreview.net/forum?id=8gd4M-_Rj1}
+      }
+
+    @article{moraitis2022softhebb,
+      title={SoftHebb: Bayesian inference in unsupervised Hebbian soft winner-take-all networks},
+      author={Moraitis, Timoleon and Toichkin, Dmitry and Journ{\'e}, Adrien and Chua, Yansong and Guo, Qinghai},
+      journal={Neuromorphic Computing and Engineering},
+      volume={2},
+      number={4},
+      pages={044017},
+      year={2022},
+      publisher={IOP Publishing}
+    }
