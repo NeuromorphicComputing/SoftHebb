@@ -1,10 +1,34 @@
 # Hebbian Deep Learning Without Feedback
 
-This repository reproduces the experiments of [this ICLR 2023 paper](https://openreview.net/forum?id=8gd4M-_Rj1), which has been accepted as Notable Top-25.
+This repository reproduces the experiments of [this ICLR 2023 paper](https://openreview.net/forum?id=8gd4M-_Rj1), which has been accepted as Notable Top-25. It also follows from [this Neuromorphic Computing and Engineering journal paper](https://iopscience.iop.org/article/10.1088/2634-4386/aca710), which has been selected as one of the journal's top papers for 2022.
 
 ## Abstract
 Recent approximations to backpropagation (BP) have mitigated many of BP's computational inefficiencies and incompatibilities with biology, but important limitations still remain. Moreover, the approximations significantly decrease accuracy in benchmarks, suggesting that an entirely different approach may be more fruitful. Here, grounded on recent theory for Hebbian learning in soft winner-take-all networks, we present multilayer SoftHebb, i.e. an algorithm that trains deep neural networks, without any feedback, target, or error signals. As a result, it achieves efficiency by avoiding weight transport, non-local plasticity, time-locking of layer updates, iterative equilibria, and (self-) supervisory or other feedback signals – which were necessary in other approaches. Its increased efficiency and biological compatibility do not trade off accuracy compared to state-of-the-art bio-plausible learning, but rather improve it. With up to five hidden layers and an added linear classifier, accuracies on MNIST, CIFAR-10, STL-10, and ImageNet, respectively reach 99.4%, 80.3%, 76.2%, and 27.3%. In conclusion, SoftHebb shows with a radically different approach from BP that Deep Learning over few layers may be plausible in the brain and increases the accuracy of bio-plausible machine learning. Code is available at https://github.com/NeuromorphicComputing/SoftHebb.
 
+
+
+## Cite
+To cite this work please use the following citations:
+
+    @inproceedings{
+      journe2023hebbian,
+      title={Hebbian Deep Learning Without Feedback},
+      author={Adrien Journ{\'e} and Hector Garcia Rodriguez and Qinghai Guo and Timoleon Moraitis},
+      booktitle={The Eleventh International Conference on Learning Representations },
+      year={2023},
+      url={https://openreview.net/forum?id=8gd4M-_Rj1}
+      }
+
+    @article{moraitis2022softhebb,
+      title={SoftHebb: Bayesian inference in unsupervised Hebbian soft winner-take-all networks},
+      author={Moraitis, Timoleon and Toichkin, Dmitry and Journ{\'e}, Adrien and Chua, Yansong and Guo, Qinghai},
+      journal={Neuromorphic Computing and Engineering},
+      volume={2},
+      number={4},
+      pages={044017},
+      year={2022},
+      publisher={IOP Publishing}
+    }
 
 ## Quick start
     # Install and activate base anaconda environment
@@ -390,16 +414,3 @@ The selection of the grid search is done by the argument --config.  However the 
 - number 3
   - 3.a (activation function = Repu/Triangle): `python ray_search.py --preset 2SoftHebbCnnCIFAR --dataset-unsup CIFAR10_1 --dataset-sup CIFAR10_50 --config 3a --folder-name layerx_search3a`
   - 3.b (activation function = softmax): `python ray_search.py --preset 2SoftHebbCnnCIFAR --dataset-unsup CIFAR10_1 --dataset-sup CIFAR10_50 --config 3b --folder-name layerx_search3b`
-
-
-## Cite
-To cite this work please use the following citation
-
-    @inproceedings{
-      journe2023hebbian,
-      title={Hebbian Deep Learning Without Feedback},
-      author={Adrien Journ{\'e} and Hector Garcia Rodriguez and Qinghai Guo and Timoleon Moraitis},
-      booktitle={The Eleventh International Conference on Learning Representations },
-      year={2023},
-      url={https://openreview.net/forum?id=8gd4M-_Rj1}
-      }
