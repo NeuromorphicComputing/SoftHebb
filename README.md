@@ -1,15 +1,27 @@
 # SoftHebb
 ### Hebbian Deep Learning Without Feedback (ICLR 2023)
 
-This repository reproduces the experiments of [this ICLR 2023 paper](https://openreview.net/forum?id=8gd4M-_Rj1), which has been accepted as Notable Top-25. 
+This repository reproduces the experiments of [this ICLR 2023 paper](https://openreview.net/forum?id=8gd4M-_Rj1), which has been accepted as Notable Top-25.
+
+_Authors:_ Adrien Journé, Hector Garcia Rodriguez, Qinghai Guo, Timoleon Moraitis
+
+_Keywords:_ Hebbian, winner-take-all, cortical circuits, unsupervised, online, biologically plausible, neuromorphic
+
+_TL;DR:_ Advancing the state of the art in bio-plausible Deep Learning, and the plausibility of DL, through Hebbian plasticity and soft winner-take-all nets.
 
 ### Bayesian inference in unsupervised Hebbian soft winner-take-all networks (Neuromorph. Comput. Eng. 2022)
 The repo also follows from [this journal paper](https://iopscience.iop.org/article/10.1088/2634-4386/aca710) (Neuromorphic Computing and Engineering 2022), which has been selected as one of [the journal's top papers for 2022](https://iopscience.iop.org/journal/2634-4386/page/2022_Highlights).
 
-## Abstract
+_Authors:_ Timoleon Moraitis, Dmitry Toichkin, Adrien Journé, Yansong Chua, Qinghai Guo
+
+_TL;DR:_ Theoretical derivation of competitive Hebbian learning rule that minimizes cross-entropy without access to labels; demonstrations of its fast learning, robustness to noise and adversarial attacks.
+
+
+## Abstract (ICLR 2023 - Multilayer learning)
 Recent approximations to backpropagation (BP) have mitigated many of BP's computational inefficiencies and incompatibilities with biology, but important limitations still remain. Moreover, the approximations significantly decrease accuracy in benchmarks, suggesting that an entirely different approach may be more fruitful. Here, grounded on [recent theory for Hebbian learning in soft winner-take-all networks](https://iopscience.iop.org/article/10.1088/2634-4386/aca710), we present multilayer SoftHebb, i.e. an algorithm that trains deep neural networks, without any feedback, target, or error signals. As a result, it achieves efficiency by avoiding weight transport, non-local plasticity, time-locking of layer updates, iterative equilibria, and (self-) supervisory or other feedback signals – which were necessary in other approaches. Its increased efficiency and biological compatibility do not trade off accuracy compared to state-of-the-art bio-plausible learning, but rather improve it. With up to five hidden layers and an added linear classifier, accuracies on MNIST, CIFAR-10, STL-10, and ImageNet, respectively reach 99.4%, 80.3%, 76.2%, and 27.3%. In conclusion, SoftHebb shows with a radically different approach from BP that Deep Learning over few layers may be plausible in the brain and increases the accuracy of bio-plausible machine learning. Code is available at https://github.com/NeuromorphicComputing/SoftHebb.
 
-
+## Abstract (Neuromorph. Comput. Eng. 2022 - Theoretical derivations & demonstrations of adversarial robustness)
+Hebbian plasticity in winner-take-all (WTA) networks is highly attractive for neuromorphic on-chip learning, owing to its efficient, local, unsupervised, and on-line nature. Moreover, its biological plausibility may help overcome important limitations of artificial algorithms, such as their susceptibility to adversarial attacks, and their high demands for training-example quantity and repetition. However, Hebbian WTA learning has found little use in machine learning, likely because it has been missing an optimization theory compatible with deep learning (DL). Here we show rigorously that WTA networks constructed by standard DL elements, combined with a Hebbian-like plasticity that we derive, maintain a Bayesian generative model of the data. Importantly, without any supervision, our algorithm, SoftHebb, minimizes cross-entropy, i.e. a common loss function in supervised DL. We show this theoretically and in practice. The key is a 'soft' WTA where there is no absolute 'hard' winner neuron. Strikingly, in shallow-network comparisons with backpropagation, SoftHebb shows advantages beyond its Hebbian efficiency. Namely, it converges in fewer iterations, and is significantly more robust to noise and adversarial attacks. Notably, attacks that maximally confuse SoftHebb are also confusing to the human eye, potentially linking human perceptual robustness, with Hebbian WTA circuits of cortex. Finally, SoftHebb can generate synthetic objects as interpolations of real object classes. All in all, Hebbian efficiency, theoretical underpinning, cross-entropy-minimization, and surprising empirical advantages, suggest that SoftHebb may inspire highly neuromorphic and radically different, but practical and advantageous learning algorithms and hardware accelerators.
 
 ## Cite
 To cite this work please use the following citations:
@@ -50,7 +62,7 @@ To cite this work please use the following citations:
 - One might have to create env first with the specific python version (3.8.11), install torch (as mentioned before, or specify build in case it defaults to cpu version), and then rest of dependencies.
 
 
-## Commands to reproduce experiments in the paper
+## Commands to reproduce experiments in the ICLR 2023 paper
 Before running experiments:
 - Make sure conda environment is [installed](#quick-start) and [working](#troubleshoot)
 - Set data path, as explained [here](#set-data-path)
@@ -421,7 +433,7 @@ The selection of the grid search is done by the argument --config.  However the 
 
 
 ## Cite
-To cite this work please use the following citations:
+To cite this work please use the following references:
 
     @inproceedings{
       journe2023hebbian,
