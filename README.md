@@ -1,4 +1,5 @@
 # SoftHebb
+_This open source project is not an official Huawei product. Huawei is not expected to provide support for this project._
 ### Hebbian Deep Learning Without Feedback (ICLR 2023)
 
 This repository reproduces the experiments of [this ICLR 2023 paper](https://openreview.net/forum?id=8gd4M-_Rj1), which has been accepted as Notable Top-25.
