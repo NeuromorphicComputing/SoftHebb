@@ -180,7 +180,7 @@ Run the experiments:
 
 ### Figure 5
 - To get the STL-10 model (if you have run the experiments for Figure 2 or 3, you can skip this command): 
-  - `python multi_layer.py --preset 5SoftHebbCnnSTL --dataset-unsup STL10_unlabel --dataset-sup STL10_100aug --model-name STL10_SoftHebb5 --save-model`
+  - `python multi_layer.py --preset 5SoftHebbCnnSTL --dataset-unsup STL10_unlabel --dataset-sup STL10_100aug --model-name STL10_SoftHebb5`
 
 ### Table 1
 - Obtain 4 seeds for each:
