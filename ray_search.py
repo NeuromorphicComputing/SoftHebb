@@ -15,6 +15,9 @@ from functools import partial
 import warnings
 import numpy as np
 
+#PQLET
+import os
+
 warnings.filterwarnings("ignore")
 
 metric_names = ['train_loss', 'train_acc', 'test_loss', 'test_acc', 'convergence', 'R1']
@@ -239,12 +242,21 @@ if __name__ == '__main__':
     trial_exp = partial(
         main, params, dataset_sup_config, dataset_unsup_config, blocks
     )
+    
+    #pqlet - fix for 0/0 gpus in docker
+    ray.init(num_gpus=1)
+    # was unnecessary
+    #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
+    
     # TODO: use ray for model storing, as it is better aware of the different variants
     analysis = tune.run(
         trial_exp,
         resources_per_trial={
-            "cpu": 4,
-            "gpu": max(1 / params.gpu_exp, torch.cuda.device_count() * 4 / 86)
+            "cpu": 6,
+            #"gpu": max(1 / params.gpu_exp, torch.cuda.device_count() * 4 / 86)
+            #pqlet
+            "gpu": 1
         },
         metric=params.metric,
         mode='min' if params.metric.endswith('loss') else 'max',
@@ -253,4 +265,7 @@ if __name__ == '__main__':
         progress_reporter=reporter,
         num_samples=params.num_samples,
         local_dir=SEARCH,
-        name=params.folder_name)
+        name=params.folder_name,
+        #pqlet - not for ray tune v1.4.1
+        # max_concurrent_trials=4        
+        )
